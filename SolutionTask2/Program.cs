@@ -3,9 +3,8 @@
 *
 */
 Console.WriteLine("введите первое число:");
-Console.WriteLine("введите второе число:");
-
 string? firstNumber = Console.ReadLine();
+Console.WriteLine("введите второе число:");
 string? secondNumber = Console.ReadLine();
 
 if (firstNumber != null && secondNumber != null) {
