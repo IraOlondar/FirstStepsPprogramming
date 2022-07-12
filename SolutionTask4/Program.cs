@@ -3,7 +3,8 @@
 *
 */
 Console.WriteLine("вводите последовательно числа через пробел:");
-int[] arr = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+string? str = Console.ReadLine() ?? "";
+int[] arr = str.Split(' ').Select(int.Parse).ToArray();
 
 if (arr.Length != 0) {
     int max = arr[0];

@@ -3,9 +3,9 @@
 *
 *//*  */
 Console.WriteLine("введите число");
-string? inputInline = Console.ReadLine();
+string? inputInline = Console.ReadLine() ?? "";
 
-if (inputInline != null) {
+if (inputInline != "") {
     int inputNumber = int.Parse(inputInline);
     //int outNumber = inputNumber*inputNumber;
     int outNumber = (int) Math.Pow(inputNumber,2);
