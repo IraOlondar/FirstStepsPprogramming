@@ -7,20 +7,17 @@ string? b = Console.ReadLine() ?? "";
 void fun (int firstNumber, int secondNumber) {
     int firstOutQuatroNumber = (int) Math.Pow(firstNumber,2);
     int secondOutQuatroNumber = (int) Math.Pow(secondNumber,2);
+    string yes = "";
+    int index = 0;
     
-    if (secondNumber > firstNumber) {
-        if (firstOutQuatroNumber == secondNumber) {
-            Console.WriteLine("второе число равно квадрату первого");
-        } else {
-            Console.WriteLine("второе число не равно квадрату первого");
-        }
-    } else {
-        if (secondOutQuatroNumber == firstNumber) {
-            Console.WriteLine("первое число равно квадрату второго");
-        } else {
-            Console.WriteLine("первое число не равно квадрату второг");
-        }
-    }
+    if (firstOutQuatroNumber != secondNumber && secondOutQuatroNumber != firstNumber) yes = "не ";
+    if ( secondNumber > firstNumber) index = 1;        
+
+    string[] text = {
+        "первое число " + yes + "равно квадрату второго",
+        "второе число " + yes + "равно квадрату первого"
+    };
+    Console.WriteLine(text[index]);
 }
 
 if (a != "" && b != "") {
