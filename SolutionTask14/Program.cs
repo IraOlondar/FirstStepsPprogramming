@@ -16,11 +16,10 @@ void fun (int number, int b, int c) {
         
         if (is_null_b == 0 && is_null_c == 0) {
             iext = "да"; 
-            Console.WriteLine(iext);
         } else {
             iext = "нет"; 
-            Console.WriteLine(iext);
         }
+        Console.WriteLine(iext);
     }
 }
 
