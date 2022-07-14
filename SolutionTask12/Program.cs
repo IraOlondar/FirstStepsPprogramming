@@ -23,7 +23,12 @@ void funck (int a, int b) {
     }
 }
 
-if (firstNumber != "" && secondNumber != "") {
+if (
+        firstNumber != "" 
+        && firstNumber != null 
+        && secondNumber != "" 
+        && secondNumber != null
+    ) {
     int firstOutNumber = int.Parse(firstNumber);
     int secondOutNumber = int.Parse(secondNumber);
     funck(firstOutNumber, secondOutNumber);

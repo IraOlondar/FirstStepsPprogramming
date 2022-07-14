@@ -6,10 +6,10 @@ Console.WriteLine("введите число:");
 string? number = Console.ReadLine();
 int b = 7;
 int c = 23;
-int outNumber = int.Parse(number);
+if (number != null && number != "") {
+    int outNumber = int.Parse(number);
 
-void fun (int number, int b, int c) {
-    if (number != null && b != null && c != null) {
+    void fun (int number, int b, int c) {
         int is_null_b = outNumber  % b;
         int is_null_c = outNumber  % c;
         string iext = "";
@@ -21,6 +21,6 @@ void fun (int number, int b, int c) {
         }
         Console.WriteLine(iext);
     }
-}
 
-fun(outNumber, b, c);
+    fun(outNumber, b, c);
+}
