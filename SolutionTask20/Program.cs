@@ -26,7 +26,7 @@ int[,] regexToArray (string input) {
         }
 
     } catch (InvalidOperationException e) {
-        Console.Write($"Ошибка ввода: {e}");
+        Console.WriteLine($"Ошибка ввода: {e}");
     }
     
     return arrCoord;
@@ -56,5 +56,5 @@ if (input != "") {
     distansePrint (arrayOut);
 
 } else {
-    Console.Write("Ошибка ввода, пустое значение");
+    Console.WriteLine("Ошибка ввода, пустое значение");
 }
