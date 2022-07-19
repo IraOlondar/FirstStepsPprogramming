@@ -71,14 +71,14 @@ if (input != "") {
 // void linePrint (List<int> outList) {
 //    List<int> outListN = new List<int>();
    
-//    //Вывод строки таблицы со спискос числел от 1 до N и параллельно создание списка их квадратов
+//    //Вывод строки таблицы со списоk числел от 1 до N и параллельно создание списка их квадратов
 //    outList.ForEach(i => {
 //         Console.Write("{0}\t", i);
 //         outListN.Add((int) Math.Pow(i, 2));
 //    });
 //     Console.WriteLine();
     
-//     //Вывод второй чтроки таблицы с квадратами чисел от 1 до N
+//     //Вывод второй cтроки таблицы с квадратами чисел от 1 до N
 //     outListN.ForEach(i => Console.Write("{0}\t", i));
     
 // }
