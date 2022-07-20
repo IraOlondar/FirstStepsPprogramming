@@ -21,7 +21,9 @@ List<int> genericList (string input) {
 //Метод подготовки кубов набора чисел и вывод на печать таблицы
 void linePrint (List<int> outList, string num) {
     int n = int.Parse(num);
-    List<int> outListN = new List<int>();
+    
+    //Создание листа кубов
+    List<int> outListN = addLisdtСube (outList);
     
     //Вывод строки таблицы со списоk числел от 1 до N и параллельно создание списка их кубов
     Console.WriteLine($"Таблица кубов чисел от 1 до {n}:");
@@ -30,58 +32,50 @@ void linePrint (List<int> outList, string num) {
     int coutWhitespace = (int) Math.Pow(n, 2).ToString().Length + 3;
 
     //Добавляем горизонтальную черту в таблицу
-    Console.Write(new string('-',coutWhitespace));
-    int s = 2;
-    while (s <= n) {
-       Console.Write("." + new string('-',coutWhitespace));
+    printLine (".", "-", n, coutWhitespace); Console.WriteLine();
+
+    //Печпть листа элементов
+    Console.Write("|"); printList (outList, coutWhitespace); Console.WriteLine();
+    
+    //Добавляем горизонтальную черту в таблицу
+    printLine (".", "-", n, coutWhitespace); Console.WriteLine();
+
+    //Печать листа кубов
+    Console.Write("|"); printList (outListN, coutWhitespace); Console.WriteLine();
+
+    //Добавляем горизонтальную черту в таблицу
+    printLine ("-", "-", n, coutWhitespace);
+}
+
+//Метод печати горизонтальной линии таблицы 
+void printLine (string a, string b, int count, int n) {
+    int s = 1;
+    while (s <= count) {
+       Console.Write(a + new string(char.Parse(b), n));
        s++;
     }
+}
 
-    Console.WriteLine();
-
-    outList.ForEach(i => {
+//Метод печати строки таблицы из листа 
+void printList (List<int> inList, int n) {
+    inList.ForEach(i => {
          //Определяем нужное количество пробелов после числа
-        int ss = coutWhitespace - i.ToString().Length - 2;
+        int ss = n - i.ToString().Length - 2;
 
         //Выводим числа с добавлением пробелов в конце
-        Console.Write(String.Format(" {0} " + new string(' ', ss) +"|", i));
-        
+        Console.Write(String.Format(" {0} " + new string(' ', ss) + "|", i));
+    });
+}
+
+//Метод создания листа кубов из исходного листа
+List<int> addLisdtСube (List<int> inList) {
+    List<int> resultList = new List<int>();
+    inList.ForEach(i => {
         //Добавляем кубы во второй лист
-        outListN.Add((int) Math.Pow(i, 3));
-    });
-    
-    Console.WriteLine();
-    
-    //Добавляем горизонтальную черту в таблицу
-    Console.Write(new string('-',coutWhitespace));
-    s = 2;
-    while (s <= n) {
-       Console.Write("." + new string('-',coutWhitespace));
-       s++;
-    }
-
-    Console.WriteLine();
-
-    //Обходим лист кубов
-    outListN.ForEach(i => {
-        //Определяем нужное количество пробелов после числа
-        int ss = coutWhitespace - i.ToString().Length - 2;
-
-        //Вывод второй cтроки таблицы с кубами чисел от 1 до N
-        //Выводим числа с добавлением пробелов в конце
-        Console.Write(String.Format(" {0} " + new string(' ', ss) +"|", i));
+        resultList.Add((int) Math.Pow(i, 3));
     });
 
-    Console.WriteLine();
-
-    //Добавляем горизонтальную черту в таблицу
-    Console.Write(new string('-',coutWhitespace));
-    s = 2;
-    while (s <= n) {
-       Console.Write(new string('-',coutWhitespace + 1));
-       s++;
-    }
-    
+    return resultList;
 }
  
 Console.Write("Введите число: ");
