@@ -1,5 +1,5 @@
 ﻿/**
-* Вывод таблицы кубов чисел от 1 до N
+* Вывод таблицы чисел степени е = 3 чисел от 1 до N
 *
 */
 
@@ -18,12 +18,12 @@ List<int> genericList (string input) {
     return lineList;
 }
 
-//Метод подготовки кубов набора чисел и вывод на печать таблицы
+//Метод подготовки набора чисел степени е = 3 и вывод на печать таблицы
 void linePrint (List<int> outList, string num, string exp) {
     int n = int.Parse(num);
     int expNum = int.Parse(exp);
     
-    //Создание листа кубов
+    //Создание листа чисел степени е = 3
     List<int> outListN = addLisdtСube (outList, expNum);
     
     //Вывод строки таблицы со списоk числел от 1 до N и параллельно создание списка их кубов
