@@ -19,17 +19,18 @@ List<int> genericList (string input) {
 }
 
 //Метод подготовки кубов набора чисел и вывод на печать таблицы
-void linePrint (List<int> outList, string num) {
+void linePrint (List<int> outList, string num, string exp) {
     int n = int.Parse(num);
+    int expNum = int.Parse(exp);
     
     //Создание листа кубов
-    List<int> outListN = addLisdtСube (outList);
+    List<int> outListN = addLisdtСube (outList, expNum);
     
     //Вывод строки таблицы со списоk числел от 1 до N и параллельно создание списка их кубов
-    Console.WriteLine($"Таблица кубов чисел от 1 до {n}:");
+    Console.WriteLine($"Таблица чисел стени {expNum} от 1 до {n}:");
 
     //Определяем длинну самого большого числа
-    int coutWhitespace = (int) Math.Pow(n, 2).ToString().Length + 3;
+    int coutWhitespace = (int) Math.Pow(n, expNum).ToString().Length + 3;
 
     //Добавляем горизонтальную черту в таблицу
     printLine (".", "-", n, coutWhitespace); Console.WriteLine();
@@ -40,7 +41,7 @@ void linePrint (List<int> outList, string num) {
     //Добавляем горизонтальную черту в таблицу
     printLine (".", "-", n, coutWhitespace); Console.WriteLine();
 
-    //Печать листа кубов
+    //Печать листа чисел степени e = 3
     Console.Write("|"); printList (outListN, coutWhitespace); Console.WriteLine();
 
     //Добавляем горизонтальную черту в таблицу
@@ -57,22 +58,22 @@ void printLine (string a, string b, int count, int n) {
 }
 
 //Метод печати строки таблицы из листа 
-void printList (List<int> inList, int n) {
+void printList (List<int> inList, int size) {
     inList.ForEach(i => {
-         //Определяем нужное количество пробелов после числа
-        int ss = n - i.ToString().Length - 2;
+        //Определяем нужное количество пробелов после числа
+        int ss = size - i.ToString().Length - 2;
 
         //Выводим числа с добавлением пробелов в конце
         Console.Write(String.Format(" {0} " + new string(' ', ss) + "|", i));
     });
 }
 
-//Метод создания листа кубов из исходного листа
-List<int> addLisdtСube (List<int> inList) {
+//Метод создания листа чисел степени e = 3 из исходного листа
+List<int> addLisdtСube (List<int> inList, int n) {
     List<int> resultList = new List<int>();
     inList.ForEach(i => {
-        //Добавляем кубы во второй лист
-        resultList.Add((int) Math.Pow(i, 3));
+        //Добавляем числа степени e = 3 во второй лист
+        resultList.Add((int) Math.Pow(i, n));
     });
 
     return resultList;
@@ -80,10 +81,12 @@ List<int> addLisdtСube (List<int> inList) {
  
 Console.Write("Введите число: ");
 string input = Console.ReadLine() ?? "";
+Console.Write("Введите степень: ");
+string expo = Console.ReadLine() ?? "";
  
-if (input != "") {
+if (input != "" && expo != "") {
     List<int> listOut = genericList (input);
-    linePrint(listOut, input);
+    linePrint(listOut, input, expo);
 } else {
     Console.Write("Ошибка ввода, пустое значение");
 }
