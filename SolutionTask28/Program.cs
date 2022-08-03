@@ -24,7 +24,7 @@ void variantSimple (int num) {
 void variantFaсt (int num) {
     int sum = 1;
 
-    //Находим произведение с помощью факториала
+    //Находим произведение с помощью рекурсивной функции
     sum  = Factorial(num);
     
     Console.WriteLine($"Произведение чисел от 1 до {num} равна {sum}");
