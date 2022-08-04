@@ -59,7 +59,7 @@ string calc(double a, double b, string action) {
     }
 }
 
-//Вывод на результата на экран
+//Вывод результата на экран
 void print (string res) { 
     Console.WriteLine(res);
 }
