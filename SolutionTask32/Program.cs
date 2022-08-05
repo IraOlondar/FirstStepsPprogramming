@@ -32,7 +32,7 @@ void Print (int[] arr) {
     
     Console.Write("[");
     foreach(int value in arr) {
-        Console.Write(value + (i != arr.Length ? "," : ""));
+        Console.Write(value + (i != arr.Length - 1 ? "," : ""));
         i++;
     }
     Console.Write("]");
