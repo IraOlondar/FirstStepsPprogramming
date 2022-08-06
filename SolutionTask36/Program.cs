@@ -54,7 +54,7 @@ int[]  SortBubble (int[] arr) {
     return arr;
 }
 
-//Вывод пар одинаковых значений элементов массива
+//Вывод элементов массива имеющих пару
 void  StarTask (int[] arr) {
     int i = 0;
     int old_value = arr[0];
@@ -62,7 +62,7 @@ void  StarTask (int[] arr) {
     string valls = "";
     
     while (i < arr.Length - 1) {
-        if (arr[i] == arr[i + 1] && (!is_first || old_value != arr[i])) {
+        if (arr[i] == arr[i + 1] && (is_first ? true : old_value != arr[i])) {
             old_value = arr[i];
             valls += (is_first ? "" : ", ") + arr[i];
             i += 2;
