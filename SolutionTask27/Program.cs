@@ -3,7 +3,7 @@
 *
 */
 
-//Нахождение суммы через пребор char массива
+//Нахождение суммы через перебор char массива
 int variantChar (string num) {
     int summ = 0;
     char[] chars = num.ToCharArray();
@@ -16,7 +16,7 @@ int variantChar (string num) {
     return summ;
 }
 
-//Нахождение суммы через черезь вешественные числа
+//Нахождение суммы через вешественные числа
 int variantInt (string num) {
     long intNum = long.Parse(num);
     int summ = 0;
@@ -29,7 +29,7 @@ int variantInt (string num) {
     return summ;
 }
 
-//Нахождение суммы через черезь перебор подстрок длиной в одну символ
+//Нахождение суммы через перебор подстрок длиной в одну символ
 int variantString (string num) {
      int summ = 0;
      int i = 0;
