@@ -43,17 +43,13 @@ double[] GetPointIntersection (double k1, double b1, double k2, double b2) {
 
 //Нахождение расстояния между точками
 double GetDistance (double coordAX, double coordAY, double coordBX, double coordBY) {
-    
-    //Находжение расстояния меду точками с помощью теоремы Пифагора
     return Math.Sqrt(Math.Pow((coordAX - coordBX), 2) + Math.Pow((coordAY - coordBY), 2));
 }
 
-//Нахождение расстояния между точками
-double GetAreaTriangle (double a, double b, double c) {   
-    
+//Нахождение прощади треугольника по трем сторонам
+double GetAreaTriangle (double a, double b, double c) {    
     double p = (a + b + c) / 2; //Порлупеиметр треугольника
     
-    //Нахождение прощади треугольника по трем сторонам
     return Math.Sqrt(p * (p - a) * (p - b) * (p - c));
 }
 
