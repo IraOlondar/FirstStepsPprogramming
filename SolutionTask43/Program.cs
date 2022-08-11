@@ -60,11 +60,11 @@ void PrintResult (double res) {
 
 double[,] inputArray = ReadSieds();
 
-// GetDistance(k1, b1, k2, b2)
+// GetPointIntersection(k1, b1, k2, b2)
 double[] pointX12 = GetPointIntersection(inputArray[0,0], inputArray[0,1], inputArray[1,0], inputArray[1,1]);
-// GetDistance(k2, b2, k3, b3)
+// GGetPointIntersection(k2, b2, k3, b3)
 double[] pointX23 = GetPointIntersection(inputArray[1,0], inputArray[1,1], inputArray[2,0], inputArray[2,1]);
-// GetDistance(k1, b1, k3, b3)
+// GetPointIntersection(k1, b1, k3, b3)
 double[] pointX13 = GetPointIntersection(inputArray[0,0], inputArray[0,1], inputArray[2,0], inputArray[2,1]);
 
 //GetDistance(X12, Y12, X23, Y23)
