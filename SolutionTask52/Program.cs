@@ -175,7 +175,7 @@ void PrintColorTwoDimensionalArray (long[,] arr, string[] str) {
     Console.WriteLine();
 }
 
-//Выводим на печать массива средним арифметическим диагоналей массива
+//Выводим на печать массива среднего арифметического диагоналей массива
 void PrintArray (double[] arr , string str) {
     int i = 0;
     int s = 0;
