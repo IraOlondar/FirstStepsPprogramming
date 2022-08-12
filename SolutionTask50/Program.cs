@@ -81,7 +81,7 @@ void PrintTwoDimensionalArray (long[,] arr) {
     Console.WriteLine();
 }
 
-//Раскрашиваем елемент если, есть по индексам
+//Раскрашиваем элемент если, есть по индексам
 void SearchColorTwoDimensionalArray (long[,] arr, string a, string b) {
     int intA = int.Parse(a);
     int intB = int.Parse(b);
@@ -110,6 +110,7 @@ void SearchColorTwoDimensionalArray (long[,] arr, string a, string b) {
         PrintColorString("Индексы находятся за пределами диапазона");
     }
 }
+
 
 int maxIndexA = 10;
 int maxIndexB = 5;
