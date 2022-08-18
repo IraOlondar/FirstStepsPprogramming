@@ -29,12 +29,11 @@ int[,,] GenThreeDimensionalArray (int a, int b, int c, int min, int max) {
 
 //Вывод на печать трехмерного массива
 void PrintThreeDimensionalArray (int[,,] arr) {
-    int y = 0;
     Console.WriteLine();
-    for(int i =0; i < arr.GetLength(0); i++) {
+    for(int i = 0; i < arr.GetLength(0); i++) {
         for(int j = 0; j < arr.GetLength(1); j++) {
             for(int k = 0; k < arr.GetLength(2); k++) {
-                Console.Write($"{arr[i,j,k]}({i},{j},{k})" + (y++ != arr.Length - 1 ? " " : ""));
+                Console.Write($"{arr[i,j,k]}({i},{j},{k})" + ((i + 1) * (j + 1) * (k + 1) != arr.Length ? " " : ""));
             }
             Console.WriteLine(); //Для лучшего визуального восприятия!
         }
