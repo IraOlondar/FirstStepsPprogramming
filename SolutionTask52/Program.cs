@@ -151,7 +151,7 @@ void PrintColorTwoDimensionalArray (long[,] arr, string[] str) {
             s = 0;
             isColor = -1;
             str.ToList().ForEach(x => {
-                s = s <= 14 ? s : s - 14;
+                s = s <= 14 ? s : 0;
                 x.Split("--").ToList().ForEach(d => {
                     ar = d.Split(";").Select(x => int.Parse(x)).ToArray();
                     if (i == ar[0] && j == ar[1]) isColor = s;
@@ -181,7 +181,7 @@ void PrintArray (double[] arr , string str) {
     int s = 0;
    Console.WriteLine(str);
     while(i < arr.Length) {
-        s = s <= 14 ? s : s - 14;
+        s = s <= 14 ? s : 0;
         Console.ForegroundColor = (ConsoleColor)(s + 1);
         Console.Write(arr[i] + (i != arr.Length - 1 ? " " : ""));
         Console.ResetColor();
