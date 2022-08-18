@@ -38,8 +38,8 @@ void PrintTwoDimensionalArray (int[,] arr) {
         j = 0;
         while(j < arr.GetLength(1)) {
             val = arr[i,j];
-            Console.Write(new string(' ', 4 - val.ToString().Length));
-            Console.Write(arr[i,j]);
+            Console.Write(new string(' ', arr[arr.GetLength(0) - 1,arr.GetLength(1) - 1].ToString().Length + 2 - val.ToString().Length));
+            Console.Write(val);
             Console.Write(" ");
             j++;
         }
