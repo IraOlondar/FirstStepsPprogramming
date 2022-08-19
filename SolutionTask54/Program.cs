@@ -62,18 +62,13 @@ int[,] UpdateTwoDimensionalArray (int[,] inputArr) {
 
 //Выводим на печать двумерный массив
 void PrintTwoDimensionalArray (int[,] arr) {
-    int i = 0, j = 0;
-
     Console.WriteLine();
-    while(i < arr.GetLength(0)) {
-        j = 0;
-        while(j < arr.GetLength(1)) {
+    for(int i = 0; i < arr.GetLength(0); i++) {
+        for(int j = 0; j < arr.GetLength(1); j++) {
             Console.Write(new string(' ', 3 - arr[i,j].ToString().Length));
             Console.Write(arr[i,j] + (j != arr.GetLength(1) - 1 ? " " : ""));   
-            j++;
         }
         Console.WriteLine();
-        i++;
     }
     Console.WriteLine();
 }
