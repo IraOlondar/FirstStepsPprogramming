@@ -22,29 +22,39 @@ int[,] GenTwoDimensionalArray (int m, int n, int min, int max) {
     return array;
 }
 
+//Сортировка массива
+int[]  Sort(int[] arr) {
+    int i, j, tmp, x;
+
+    for (i = 1; i < arr.Length; i++) {
+        x = arr[i];
+        j = i;
+        while (j > 0 && arr[j - 1] > x) {
+            tmp = arr[j];
+            arr[j] = arr[j - 1];
+            arr[j - 1] = tmp;
+            j -= 1;
+        }
+        arr[j] = x;
+    }
+
+    return arr;
+}
+
 //Построчная сортировка массива
 int[,] UpdateTwoDimensionalArray (int[,] inputArr) {
-    int i = 0;
-    int j = 0;
-    int k = 0;
-    int x;
-    int temp;
+    int[] array = new int[inputArr.GetLength(1)];
 
-    while(i < inputArr.GetLength(0)) {
-        j = 0;
-        while(j < inputArr.GetLength(1)) {
-            x = inputArr[i,j];
-            k = j;
-            while (k > 0 && inputArr[i,k - 1] > x) {
-                temp = inputArr[i,k];
-                inputArr[i,k] = inputArr[i,k - 1];
-                inputArr[i,k - 1] = temp;
-                k -= 1;
-            }
-            inputArr[i,k] = x;
-            j++;
+    for(int i = 0; i < inputArr.GetLength(0); i++) {
+        for(int j = 0; j < inputArr.GetLength(1); j++) {
+            array[j] = inputArr[i,j];
         }
-        i++;
+
+        array = Sort(array);
+
+        for(int j = 0; j < inputArr.GetLength(1); j++) {
+            inputArr[i,j] = array[j];
+        }
     }
     return inputArr;
 }
