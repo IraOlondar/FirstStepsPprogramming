@@ -31,20 +31,16 @@ int[,] GenSpiralArray(int n, int m) {
 
 //Выводим на печать массив
 void PrintTwoDimensionalArray (int[,] arr) {
-    int i = 0, j = 0;
     int val;
     Console.WriteLine();
-    while(i < arr.GetLength(0)) {
-        j = 0;
-        while(j < arr.GetLength(1)) {
+    for(int i = 0; i < arr.GetLength(0); i++) {
+        for(int j = 0; j < arr.GetLength(1); j++) {
             val = arr[i,j];
             Console.Write(new string(' ', arr[arr.GetLength(0) - 1,arr.GetLength(1) - 1].ToString().Length + 2 - val.ToString().Length));
             Console.Write(val);
             Console.Write(" ");
-            j++;
         }
         Console.WriteLine();
-        i++;
     }
     Console.WriteLine();
 }
